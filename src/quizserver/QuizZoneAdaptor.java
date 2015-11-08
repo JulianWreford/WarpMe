@@ -9,7 +9,7 @@ import com.shephertz.app42.server.idomain.IRoom;
 import com.shephertz.app42.server.idomain.IUser;
 import com.shephertz.app42.server.idomain.IZone;
 
-import java.net.UnknownHostException;
+//import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +17,7 @@ import org.apache.mina.core.buffer.IoBuffer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import quizcommon.QuizResponseCode;
-import com.mongodb.*;
+//import com.mongodb.*;
 
 /**
  * BaseZoneAdaptor handles all the zone specific requests like creation and deletion of rooms, etc. 
