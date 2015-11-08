@@ -204,6 +204,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     
     // Query our collection documents metaTag elements for a matching string
     // @SuppressWarnings("deprecation")
+	/**
 	public void queryMetaTags(String query)
     {
 		// Query to search all documents in current collection
@@ -259,8 +260,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     			e1.printStackTrace();
     		}
         }   
-    }
+    }*/
 
+	/**
 	public void pullOut10Questions()
 	{
 		// Array to hold 10 random numbers between 0 and our results total
@@ -287,8 +289,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
 				}
 			}
 		}
-	}
+	}*/
 	
+	/**
 	//public void pojoOurQuestions(ArrayList<JSONObject> questionsArray)
 	public void pojoOurQuestions()
 	{
@@ -316,9 +319,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 	
-	
+	/**
 	// Return 10 random numbers in range
 	public ArrayList<Integer> generate10RandomNumbersInRange(int range)
 	{
@@ -350,8 +353,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
 	    	al.add(iter.next());
 	    }
 	    return al;
-	}
+	}*/
 	
+	/**
     public void insertJsonFiles()
     {
         try
@@ -392,9 +396,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         {
         	System.out.println("Exception inserting documents: " + e.getMessage());
         }
-    }
+    }*/
     
-    
+    /**
     public String readInJsonFile(String fileName)
     {
         try 
@@ -422,7 +426,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
             System.out.println("Exception readInJasonFile: " + e);
             return null;
         }
-    }
+    }/*
     
     /** 
      * Invoked when a user leaves the room 
