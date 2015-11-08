@@ -7,9 +7,9 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.CommandResult;
-import com.mongodb.DB;
-import com.mongodb.DBObject;
+//import com.mongodb.CommandResult;
+//import com.mongodb.DB;
+//import com.mongodb.DBObject;
 import com.shephertz.app42.server.domain.Room;
 import com.shephertz.app42.server.idomain.BaseRoomAdaptor;
 import com.shephertz.app42.server.idomain.HandlingResult;
@@ -50,8 +50,8 @@ import quizcommon.QuizResponseCode;
 import quizcommon.QuizType;
 import quizcommon.UserStatus;
 
-import com.mongodb.*;
-import com.mongodb.util.JSON;
+//import com.mongodb.*;
+//import com.mongodb.util.JSON;
 
 import database.ClientSingleton;
 /**
@@ -77,10 +77,10 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     private int StartQuizFlag = 0;
     private boolean HasAnyUserLeftTheRoom=false;
     
-    private DB mongoDatabase;
-    private DBCollection mongoColl;
-    private DBCollection mongoColl1;
-    private DBObject dbObject;
+    //private DB mongoDatabase;
+    //private DBCollection mongoColl;
+    //private DBCollection mongoColl1;
+    //private DBObject dbObject;
     
     private Timer dbTimer;
     
