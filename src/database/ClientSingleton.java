@@ -1,10 +1,9 @@
 package database;
 
-import java.net.UnknownHostException;
-import java.util.Collections;
+//import java.net.UnknownHostException;
+//import java.util.Collections;
+//import com.mongodb.*;
 
-
-import com.mongodb.*;
 /**
  * Singleton class provide single mongo client reference across our application.
  * 
@@ -12,6 +11,7 @@ import com.mongodb.*;
  */
 public class ClientSingleton 
 {
+
 	// Client instance singleton as volatile (modified by different threads &
 	// not cached locally: all reads and writes go straight to "main memory")
 	// Possibly remove volatile keyword as it's an unnecessary slow-down,
@@ -20,9 +20,9 @@ public class ClientSingleton
 	// The MongoClient class is designed to be thread safe and shared among threads. 
     // We create only 1 instance for our given database cluster and use it across
     // our application.
-	private MongoClient mongoClient;
-	private MongoClientOptions options;
-	private MongoCredential credential;
+	//private MongoClient mongoClient;
+	//private MongoClientOptions options;
+	//private MongoCredential credential;
 	
 	private final String password = "afml17jzjd4fbbr200bzofu0e3mxwq0i";
 	private final String host = "54.213.93.154";
@@ -31,6 +31,7 @@ public class ClientSingleton
 	/**
 	 * 
 	 */
+	/**
 	private ClientSingleton() 
 	{
 		// Setup client credentials for DB connection (user, db name & password)
@@ -66,12 +67,13 @@ public class ClientSingleton
 		{
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	/**
 	 * Double checked dispatch method to initialise our client singleton class
 	 * 
 	 */
+	/**
 	public static ClientSingleton getInstance()
 	{
 		if(uniqueInstance == null)
@@ -85,13 +87,13 @@ public class ClientSingleton
 			}
 		}
 		return uniqueInstance;
-	}
+	}*/
 	
 	/**
 	 * @return our mongo client
 	 */
-	public MongoClient getClient() {
-		return mongoClient;
-	}
+	//public MongoClient getClient() {
+	//	return mongoClient;
+	//}
 
 }

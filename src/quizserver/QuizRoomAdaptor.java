@@ -102,12 +102,12 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         this.izone = izone;
         this.gameRoom = room;
         
-		System.out.println("Getting database...");
-        mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
-        System.out.println("Getting database success...");
+		//System.out.println("Getting database...");
+        //mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
+        //System.out.println("Getting database success...");
         
-        System.out.println("Getting mongo collection...");
-        mongoColl = mongoDatabase.getCollection("EN_Collection.GOT");
+        //System.out.println("Getting mongo collection...");
+        //mongoColl = mongoDatabase.getCollection("EN_Collection.GOT");
         
         //mongoColl = mongoDatabase.getCollection("EN_Collection.");
         //System.out.println("Getting collection success...");

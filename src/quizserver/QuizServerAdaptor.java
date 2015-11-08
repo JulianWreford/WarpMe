@@ -39,7 +39,7 @@ public class QuizServerAdaptor extends BaseServerAdaptor
     {
     	// Close our connection to MongoDB when zone is deleted
     	System.out.println("Closing MongoDB client connection...");
-    	ClientSingleton.getInstance().getClient().close();
+    	//ClientSingleton.getInstance().getClient().close();
     	System.out.println("Closing MongoDB client success...");
     }
 }
