@@ -110,7 +110,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         mongoColl = mongoDatabase.getCollection("EN_Collection.GOT");
         
         //mongoColl = mongoDatabase.getCollection("EN_Collection.");
-        System.out.println("Getting collection success...");
+        //System.out.println("Getting collection success...");
         
         /*List<DBObject> indexes = mongoColl.getIndexInfo();
         for(DBObject i : indexes)
@@ -118,8 +118,8 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         	System.out.println("Index information: " + i.toString());//<---- DISPLAY INDEX INFORMATION
         }*/
         //mongoColl.drop();//   <-------------------------------------- DROP COLLECTION
-        System.out.println("Getting first document...");
-        System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
+        //System.out.println("Getting first document...");
+        //System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
         //start = System.currentTimeMillis();
         //BasicDBObject index = new BasicDBObject("season.questions.questionEntry.metaTags",1);
         //mongoColl.createIndex(index); // <----------------------------- CREATE INDEX (slightly faster than no index)
@@ -138,15 +138,15 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     	}*/
     		
     	
-    	System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
+    	//System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
     	
         /*DBCursor cursorDoc = mongoColl.find();  // <---------------- DISPLAY DOCUMENTS
         while (cursorDoc.hasNext()) {  
          System.out.println(cursorDoc.next());  
         }*/
        
-        System.out.println(dbObject);
-        System.out.println("Getting document success...");
+        //System.out.println(dbObject);
+        //System.out.println("Getting document success...");
         /*dbObject = mongoColl. findOne();        // <---------------- DISPLAY DOCUMENTS
         String s = JSON.serialize(dbObject);
         JSONObject json = null;
@@ -165,25 +165,25 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         //insertJsonFiles();//  <------------------------------------ INSERT DOCUMENT
 
         
-        System.out.println("Getting all collections..."); // <----------DISPLAYS ALL COLLECTIONS
-        Set<String> tables = mongoDatabase.getCollectionNames();
-        for(String coll : tables)
-        {
-        	System.out.println("Collection Name: " + coll);
-        }
-        System.out.println("Getting all collections success...");
+        //System.out.println("Getting all collections..."); // <----------DISPLAYS ALL COLLECTIONS
+        //Set<String> tables = mongoDatabase.getCollectionNames();
+        //for(String coll : tables)
+        //{
+        //	System.out.println("Collection Name: " + coll);
+        //}
+        //System.out.println("Getting all collections success...");
         
-        System.out.println("Before call to queryMetaTags");
+        //System.out.println("Before call to queryMetaTags");
         // Timer to test how long it takes to produce our 10 questions
-        start = System.currentTimeMillis();
+        //start = System.currentTimeMillis();
         // Now we try and query our db
         //queryMetaTags("Relationships");//  <------------------------ QUERY COLLECTION
         //pullOut10Questions(); // <----------------------------- GET 10 QUESTIONS
         //pojoOurQuestions(); // <------------------------------- POJO OUR QUESTIONS
-        System.out.println("After call to queryMetaTags"); 
-        end = System.currentTimeMillis();
-    	double elapsedTime = ((end-start)/1000.0);
-    	System.out.println("Mongodb and question creation time: " + elapsedTime);
+        //System.out.println("After call to queryMetaTags"); 
+        //end = System.currentTimeMillis();
+    	//double elapsedTime = ((end-start)/1000.0);
+    	//System.out.println("Mongodb and question creation time: " + elapsedTime);
     	
     	
         GAME_STATUS = QuizConstants.STOPPED;
@@ -477,6 +477,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     @Override
     public void handleUpdatePeersRequest(IUser sender, byte[] update, HandlingResult result) 
     {
+    	System.out.println("In handleUpdatePeersRequest" + " sender = " + sender.getName());
         try 
         {
             result.sendNotification = false;
@@ -494,7 +495,8 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
             {
                 case QuizRequestCode.STARTQUIZ:
                     StartQuizFlag++;
-                    System.out.println("Received Start Quiz Packet" + StartQuizFlag + "RoomId " + this.gameRoom.getId());
+                    System.out.println("Received Start Quiz Packet" + StartQuizFlag + "RoomId " + this.gameRoom.getId()
+                    		+ " sender = " + sender.getName());
                     break;
                 case QuizRequestCode.ANSWERPACKET:
                     System.out.println("Answer Received " + bt);
