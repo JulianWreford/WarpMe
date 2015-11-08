@@ -1,0 +1,34 @@
+{
+    "Questions": [
+        {
+            "id": 1,
+            "Question": {
+                "Question": "What was the first 32-bit version of windows?",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "Windows 95"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Windows XP"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Windows NT"
+                }
+            ]
+        }
+    ],
+    "Answers": [
+        {
+            "QuestionId": 1,
+            "Answer": 3
+        }
+    ]
+}

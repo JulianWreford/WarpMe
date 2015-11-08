@@ -1,0 +1,29 @@
+{
+  "id": 1,
+  "showListArray": [
+    [
+      "GOT",
+      "Universal",
+      "Season 1",
+      "Season 2",
+      "Season 3",
+      "season 4",
+      "season 5",
+      "House Batatheon",
+      "House Lannister",
+      "House Stark",
+      "Tyrion Lannister",
+      "The Nights Watch",
+      "Interesting Trivia",
+      "Relationships",
+      "Places & Cities"
+    ],
+    [
+      "VIK",
+      "Universal",
+      "Season 1",
+      "Season 2",
+      "Season 3"
+    ]
+  ]
+}

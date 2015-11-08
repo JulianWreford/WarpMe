@@ -1,0 +1,34 @@
+{
+    "Questions": [
+        {
+            "id": 1,
+            "Question": {
+                "Question": "What is the name of Microsoft's cloud computing platform?",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "EC2"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Sharepoint"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Azure"
+                }
+            ]
+        }
+    ],
+    "Answers": [
+        {
+            "QuestionId": 1,
+            "Answer": 3
+        }
+    ]
+}

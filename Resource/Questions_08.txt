@@ -1,0 +1,34 @@
+{
+    "Questions": [
+        {
+            "id": 1,
+            "Question": {
+                "Question": "Which version of Windows has the biggest market share?",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "Windows XP"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Windows 7"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Windows Vista"
+                }
+            ]
+        }
+    ],
+    "Answers": [
+        {
+            "QuestionId": 1,
+            "Answer": 2
+        }
+    ]
+}

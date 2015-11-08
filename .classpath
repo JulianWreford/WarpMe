@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="libs/AppWarpS2-1.0.8.jar" sourcepath="libs/AppWarpS2-1.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/AppWarpApacheMina.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="quizserver/libs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="libs/json-org.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/quizserver/libs/json-org.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jsonschema2pojo-core-0.4.13.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="libs/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="libs/hsqldb.jar"/>
+	<classpathentry kind="lib" path="libs/javassist-3.11.0.GA.jar"/>
+	<classpathentry kind="lib" path="libs/jzlib-1.0.7.jar"/>
+	<classpathentry kind="lib" path="libs/logback-classic-1.0.13.jar"/>
+	<classpathentry kind="lib" path="libs/logback-core-1.0.13.jar"/>
+	<classpathentry kind="lib" path="libs/ognl-3.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/restfb-1.6.11.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="libs/spring-beans-3.2.0.M1.jar"/>
+	<classpathentry kind="lib" path="libs/tomcat-apr-5.5.23.jar"/>
+	<classpathentry kind="lib" path="MongoDB/mongo-java-driver-2.13.2-javadoc.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://api.mongodb.org/java/2.13/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="MongoDB/mongo-java-driver-2.13.2.jar" sourcepath="MongoDB/mongo-java-driver-2.13.2-javadoc.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://api.mongodb.org/java/2.13/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/codemodel-2.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-annotations-2.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-core-2.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-databind-2.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

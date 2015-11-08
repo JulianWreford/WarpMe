@@ -1,0 +1,34 @@
+{
+    "Questions": [
+        {
+            "id": 1,
+            "Question": {
+                "Question": "What British games developer did Microsoft acquire in 2002",
+                "AttachedElement": {
+                    "Type": 1,
+                    "Value": ""
+                }
+            },
+            "Options": [
+                {
+                    "Type": 1,
+                    "Value": "Rare"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Psygnosis"
+                },
+                {
+                    "Type": 1,
+                    "Value": "Bungie"
+                }
+            ]
+        }
+    ],
+    "Answers": [
+        {
+            "QuestionId": 1,
+            "Answer": 1
+        }
+    ]
+}
