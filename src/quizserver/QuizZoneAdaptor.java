@@ -143,7 +143,7 @@ public class QuizZoneAdaptor extends BaseZoneAdaptor
     @Override
     public void handleAddUserRequest(IUser user, String authData, HandlingResult result) 
     { 
-    	System.out.println("In handleAddUserRequest()"+ result);
+    	System.out.println("In handleAddUserRequest for "+ user.getName() + " and result is " +result.description);
     	// Below method of finding user fb friend in zone is totally 
     	// slow and I will need to re-write
     	try 

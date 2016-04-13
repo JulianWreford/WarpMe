@@ -13,6 +13,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="libs/jsonschema2pojo-core-0.4.13.jar"/>
+	<classpathentry kind="lib" path="libs/mongo-java-driver-2.13.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="libs/mongo-java-driver-2.13.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="libs/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="libs/hsqldb.jar"/>

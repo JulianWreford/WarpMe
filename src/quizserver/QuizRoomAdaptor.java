@@ -7,9 +7,9 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.mongodb.CommandResult;
-//import com.mongodb.DB;
-//import com.mongodb.DBObject;
+import com.mongodb.CommandResult;
+import com.mongodb.DB;
+import com.mongodb.DBObject;
 import com.shephertz.app42.server.domain.Room;
 import com.shephertz.app42.server.idomain.BaseRoomAdaptor;
 import com.shephertz.app42.server.idomain.HandlingResult;
@@ -50,10 +50,11 @@ import quizcommon.QuizResponseCode;
 import quizcommon.QuizType;
 import quizcommon.UserStatus;
 
-//import com.mongodb.*;
-//import com.mongodb.util.JSON;
+import com.mongodb.*;
+import com.mongodb.util.JSON;
 
 import database.ClientSingleton;
+
 /**
  * BaseRoomAdaptor handles the room specific methods. It handles all the interactions taking place 
  * between the users in a room. It also contains handleTimerTick() similar to BaseZoneAdapter.
@@ -77,10 +78,10 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     private int StartQuizFlag = 0;
     private boolean HasAnyUserLeftTheRoom=false;
     
-    //private DB mongoDatabase;
-    //private DBCollection mongoColl;
-    //private DBCollection mongoColl1;
-    //private DBObject dbObject;
+    private DB mongoDatabase;
+    private DBCollection mongoColl;
+    private DBCollection mongoColl1;
+    private DBObject dbObject;
     
     private Timer dbTimer;
     
@@ -102,9 +103,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         this.izone = izone;
         this.gameRoom = room;
         
-		//System.out.println("Getting database...");
-        //mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
-        //System.out.println("Getting database success...");
+		System.out.println("Getting database...");
+        mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
+        System.out.println("Getting database success...");
         
         //System.out.println("Getting mongo collection...");
         //mongoColl = mongoDatabase.getCollection("EN_Collection.GOT");
@@ -112,11 +113,11 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         //mongoColl = mongoDatabase.getCollection("EN_Collection.");
         //System.out.println("Getting collection success...");
         
-        /*List<DBObject> indexes = mongoColl.getIndexInfo();
+        List<DBObject> indexes = mongoColl.getIndexInfo();
         for(DBObject i : indexes)
         {
         	System.out.println("Index information: " + i.toString());//<---- DISPLAY INDEX INFORMATION
-        }*/
+        }
         //mongoColl.drop();//   <-------------------------------------- DROP COLLECTION
         //System.out.println("Getting first document...");
         //System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
@@ -457,8 +458,8 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     @Override
     public void handleUserJoinRequest(IUser user, HandlingResult result) 
     {	
-    	System.out.println("In handleUserJoinRequest()");
-        System.out.println(user.getName() + " joined room Request");
+    	System.out.println("In handleUserJoinRequest for " + user.getName() + " and result is " + result.description.toString());
+        System.out.println("adding " + user.getName() + " to the room");
         if (UserStatusList.size() < gameRoom.getMaxUsers()) 
         {
             System.out.println(user.getName() + " joined room Request Success");
@@ -481,7 +482,8 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     @Override
     public void handleUpdatePeersRequest(IUser sender, byte[] update, HandlingResult result) 
     {
-    	System.out.println("In handleUpdatePeersRequest" + " sender = " + sender.getName());
+    	System.out.println("In handleUpdatePeersRequest for " + " sender " + sender.getName() + " and result is "
+    			+ result.description.toString());
         try 
         {
             result.sendNotification = false;
@@ -599,6 +601,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
                         int totalQuestion = Utils.LevelJson.getJSONObject(GameCurrentLevel).getInt("totalQuestions");
                         if (GameCurrentQuestion != -1) 
                         {
+                        	//System.out.println("In onTimerTick addDefaultAnswerPacket");
                             AddDefaultAnswers();
                         }
                         if (GameCurrentQuestion < (totalQuestion - 1)) 
@@ -666,7 +669,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
     // increment current game question count by 1
     private void SendQuestion() 
     {
-    	System.out.println("In SendQuestion()");
+    	System.out.println("In SendQuestion before getNextQuestionPacket");
         QuizTimerCount = 0;
         GameCurrentQuestion++;
         byte[] questionPacket = getNextQuestionPacket();
@@ -700,6 +703,7 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
             buf.setAutoExpand(true);
             if (GameCurrentLevel < Utils.LevelJson.length() - 1) 
             {
+            	System.out.println("In SendLevelEndPacket and GameCurrentLevel < Utils.LevelJson = " +  Utils.LevelJson);
                 buf.put(QuizResponseCode.LEVELRESULT);
             } 
             else 
@@ -733,11 +737,13 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
             buf.setAutoExpand(true);
             if (GameCurrentQuestion < 1) 
             {
+            	System.out.println("In getNextQuestionPacket sending LEVELSTART");
                 buf.put(QuizResponseCode.LEVELSTART);
                 buf.putInt(GameCurrentLevel);
             } 
             else 
             {
+            	System.out.println("In getNextQuestionPacket sending QUESTIONPACKET");
                 buf.put(QuizResponseCode.QUESTIONPACKET);
                 JSONObject LastQuestionAnswer = Utils.getAnswerJsonObject(QUIZ_TYPE, GameCurrentLevel, GameCurrentQuestion - 1);
                 int ans = LastQuestionAnswer.getInt("Answer");
@@ -886,7 +892,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
      */  
     public void handleUserSubscribeRequest(IUser sender, HandlingResult result)  
     {
-    	System.out.println("An  subscribe room request is received by the room" + gameRoom.getId());
+    	System.out.println("An  subscribe room request is received by the room "+ gameRoom.getId()
+    			+ " for " + sender.getName() + " result is " + result.description);
+    	result.sendNotification = true;
     }
     
     /** 

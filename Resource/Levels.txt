@@ -36,5 +36,6 @@
             "timePerQuestion": 10
         }
     ],
+    
 	"delayInBetweenTheLevels":"2"
 }
