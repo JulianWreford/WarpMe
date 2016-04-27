@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="libs/AppWarpS2-1.0.8.jar" sourcepath="libs/AppWarpS2-1.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/AppWarpS2_1.8.jar" sourcepath="libs/AppWarpS2-1.0.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/AppWarpApacheMina.jar">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="quizserver/libs"/>

@@ -103,9 +103,9 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         this.izone = izone;
         this.gameRoom = room;
         
-		System.out.println("Getting database...");
-        mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
-        System.out.println("Getting database success...");
+		//System.out.println("Getting database...");
+        //mongoDatabase = ClientSingleton.getInstance().getClient().getDB("QuizitTVMongoDB");
+        //System.out.println("Getting database success...");
         
         //System.out.println("Getting mongo collection...");
         //mongoColl = mongoDatabase.getCollection("EN_Collection.GOT");
@@ -113,11 +113,11 @@ public class QuizRoomAdaptor extends BaseRoomAdaptor
         //mongoColl = mongoDatabase.getCollection("EN_Collection.");
         //System.out.println("Getting collection success...");
         
-        List<DBObject> indexes = mongoColl.getIndexInfo();
-        for(DBObject i : indexes)
-        {
-        	System.out.println("Index information: " + i.toString());//<---- DISPLAY INDEX INFORMATION
-        }
+        //List<DBObject> indexes = mongoColl.getIndexInfo();
+        //for(DBObject i : indexes)
+        //{
+        //	System.out.println("Index information: " + i.toString());//<---- DISPLAY INDEX INFORMATION
+        //}
         //mongoColl.drop();//   <-------------------------------------- DROP COLLECTION
         //System.out.println("Getting first document...");
         //System.out.println("Number of documents in collection: " + mongoColl.count()); // <---- COUNTS DOCUMENTS IN COLLECTION
